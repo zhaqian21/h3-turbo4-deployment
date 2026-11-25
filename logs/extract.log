@@ -1,0 +1,20 @@
+tar: This does not look like a tar archive
+tar: Skipping to next header
+tar: Exiting with failure status due to previous errors
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/extract-build-tools.py", line 6, in <module>
+    subprocess.run(['tar','--keep-directory-symlink','--no-same-owner','-xf','-','-C',str(r)],stdin=a.stdout,check=True);a.stdout.close();assert a.wait()==0
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['tar', '--keep-directory-symlink', '--no-same-owner', '-xf', '-', '-C', '/data/users/example/h3-turbo4/ubuntu-rootfs']' returned non-zero exit status 2.
+tar: unrecognized option '--zstd'
+Try 'tar --help' or 'tar --usage' for more information.
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/extract-build-tools.py", line 6, in <module>
+    subprocess.run(['tar',('--zstd' if name.endswith('.zst') else '-J' if name.endswith('.xz') else '-z'),'--keep-directory-symlink','--no-same-owner','-xf','-','-C',str(r)],stdin=a.stdout,check=True);a.stdout.close();assert a.wait()==0
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['tar', '--zstd', '--keep-directory-symlink', '--no-same-owner', '-xf', '-', '-C', '/data/users/example/h3-turbo4/ubuntu-rootfs']' returned non-zero exit status 64.
+EXTRACT_COMPLETE

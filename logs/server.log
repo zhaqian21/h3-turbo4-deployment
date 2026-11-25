@@ -1,0 +1,1206 @@
+[11-04 14:23:42] Applying performance_mode=speed
+[11-04 14:23:42] performance_mode=speed keeps torch.compile disabled for this model (pass --enable-torch-compile true to opt in)
+[11-04 14:23:42] kill_process_tree called: parent_pid=1360802, include_parent=False, pid=1360802
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/runtime-venv/bin/sglang", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/main.py", line 51, in main
+    serve(args, extra_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 213, in serve
+    registered.backend.run(request)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 131, in _run_diffusion
+    execute_serve_cmd(parsed_args, remaining_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/entrypoints/cli/serve.py", line 33, in execute_serve_cmd
+    server_args = ServerArgs.from_cli_args(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/server_args/server_args.py", line 3668, in from_cli_args
+    return cls.from_dict(provided_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/server_args/server_args.py", line 3711, in from_dict
+    return cls(**server_args_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 174, in __init__
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/server_args/server_args.py", line 2161, in __post_init__
+    self._adjust_parameters()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/server_args/server_args.py", line 674, in _adjust_parameters
+    self._adjust_offload()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/server_args/server_args.py", line 979, in _adjust_offload
+    if current_platform.get_device_total_memory() / BYTES_PER_GB < 30:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/platforms/cuda.py", line 77, in wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/platforms/cuda.py", line 925, in get_device_total_memory
+    physical_device_id = device_id_to_physical_device_id(device_id)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/platforms/cuda.py", line 67, in device_id_to_physical_device_id
+    return int(physical_device_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'GPU-REPLACE-0'
+[11-04 14:38:49] Applying performance_mode=speed
+[11-04 14:38:49] performance_mode=speed keeps torch.compile disabled for this model (pass --enable-torch-compile true to opt in)
+[11-04 14:38:49] Proposed encoder parallel folding (mode=world) for ServerArgs (tp=2 sp=2 cfg=1 replica=4); the loader keeps it for encoders wide enough to benefit.
+[11-04 14:38:49] server_args: {"model_path": "/data/users/example/h3-turbo4/models/MiniMax-H3", "model_subfolder": null, "model_variant": "fl2va", "model_id": null, "served_model_name": "/data/users/example/h3-turbo4/models/MiniMax-H3", "backend": "auto", "attention_backend": null, "enable_attention_backend_autotune": false, "attention_backend_config": {}, "component_attention_backends": {}, "component_attention_backend_roles": {}, "cache_dit_config": null, "nccl_port": null, "enable_nccl_nvls": false, "trust_remote_code": false, "revision": null, "num_gpus": 4, "performance_mode": "speed", "base_gpu_id": 0, "gpu_ids": null, "numa_node": null, "nnodes": 1, "node_rank": 0, "dist_init_addr": null, "tp_size": 2, "sp_degree": 2, "ulysses_degree": 2, "ring_degree": 1, "kv_gather_degree": 1, "sp_split_auto": false, "dp_size": 1, "enable_cfg_parallel": false, "cfg_parallel_degree": 1, "encoder_parallel": "auto", "hsdp_replicate_dim": 1, "hsdp_shard_dim": 4, "dist_timeout": 3600, "scheduler_rpc_timeout": null, "pipeline_class_name": null, "lora_path": "/data/users/example/h3-turbo4/models/turbo-v4/minimax_h3_turbo_v4_step600_ema.safetensors", "lora_nickname": "h3-turbo-v4", "lora_scale": 1.0, "lora_alpha": null, "lora_merge_mode": "dynamic", "lora_weight_name": null, "component_paths": {}, "component_weights_paths": {}, "component_direct_gpu_weight_loading": {}, "component_quantizations": {}, "component_precisions": {}, "component_quantization_ignored_layers": {}, "load_diffusion_decoder": false, "transformer_weights_path": null, "minimax_h3_adaln_cache_path": null, "minimax_h3_adaln_online": false, "minimax_h3_adaln_plan_width": 4, "minimax_h3_adaln_host_cache_gb": 8.0, "quantization": null, "quantization_ignored_layers": null, "lora_target_modules": null, "component_residency": null, "cpu_offload_components": null, "dit_cpu_offload": false, "direct_gpu_weight_loading": false, "dit_layerwise_offload": false, "layerwise_offload_components": null, "dit_offload_prefetch_size": 0.0, "dit_layerwise_resident_layers": 0.0, "dit_layerwise_residency_policy": "leading", "dit_layerwise_residency_lifetime": "forward", "layerwise_prefetch_size": {}, "layerwise_resident_layers": {}, "layerwise_residency_policy": {}, "layerwise_residency_lifetime": {}, "offload_during_compile": true, "text_encoder_cpu_offload": false, "image_encoder_cpu_offload": false, "vae_cpu_offload": false, "use_fsdp_inference": false, "pin_cpu_memory": true, "ltx2_two_stage_device_mode": null, "comfyui_mode": false, "enable_torch_compile": false, "regional_compile": false, "allow_cudnn_tf32": true, "allow_bf16_reduced_precision_reduction": true, "enable_breakable_cuda_graph": false, "bcg_text_buckets": null, "enable_layerwise_nvtx_marker": false, "warmup_mode": "server", "warmup_resolutions": null, "warmup_num_frames": null, "warmup_steps": 1, "warmup_sampling_params": null, "disable_autocast": false, "master_port": 30005, "host": "127.0.0.1", "port": 30010, "enable_metrics": false, "webui": false, "webui_port": 12312, "scheduler_port": 5632, "scheduler_ports": [5632], "batching_mode": "dynamic", "batching_max_size": 1, "batching_delay_ms": 0.0, "batching_config": null, "enable_batching_metrics": false, "async_output_save": false, "strict_ports": false, "output_path": "/data/users/example/h3-turbo4/outputs", "input_save_path": "inputs/uploads", "prompt_file_path": null, "model_paths": {}, "model_loaded": {"transformer": true, "vae": true, "video_vae": true, "audio_vae": true, "video_dit": true, "audio_dit": true, "dual_tower_bridge": true}, "boundary_ratio": null, "disagg_role": "monolithic", "disagg_timeout": 3600, "disagg_downstream_wait_timeout": 1800, "disagg_dispatch_policy": "round_robin", "disagg_mode": false, "disagg_instance_id": 0, "disagg_max_slots_per_instance": 8, "disagg_transfer_redundancy": 1.25, "disagg_role_device": "auto", "disagg_transfer_backend": "auto", "disagg_transfer_pool_size": 268435456, "disagg_transfer_pin_memory": "auto", "disagg_p2p_hostname": "127.0.0.1", "disagg_ib_device": null, "disagg_server_addr": null, "encoder_urls": null, "denoiser_urls": null, "decoder_urls": null, "encoder_tp": null, "denoiser_tp": null, "denoiser_sp": null, "denoiser_ulysses": null, "denoiser_ring": null, "decoder_sp": null, "pool_work_endpoint": null, "pool_result_endpoint": null, "pool_control_endpoint": null, "pool_control_advertised_endpoint": null, "log_level": "info", "log_requests": false, "log_requests_level": 2, "log_requests_format": "text", "log_requests_target": null, "uvicorn_access_log_exclude_prefixes": [], "enable_cache_report": false, "disable_conditioning_cache": false, "conditioning_cache_max_size_mb": 512.0, "enable_trace": false, "otlp_traces_endpoint": "localhost:4317", "otlp_service_name": null, "srt_encoder_url": null, "srt_encoder_connect_timeout": 3.05, "srt_encoder_timeout": 100, "pe_server_url": null, "prompt_enhancer_config": null}
+[11-04 14:38:49] Starting server...
+[11-04 14:39:02] Scheduler (dp replica 0) bind at endpoint: tcp://127.0.0.1:5632
+[11-04 14:39:03] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 14:39:03] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 14:39:03] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 14:39:03] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 14:39:03] torch.compile cache: TORCHINDUCTOR_CACHE_DIR=/data/users/example/h3-turbo4/cache/inductor TRITON_CACHE_DIR=/data/users/example/h3-turbo4/cache/triton
+[11-04 14:39:03] Initializing distributed environment with world_size=4, device=cuda:0, timeout=3600
+[11-04 14:39:03] Setting distributed timeout to 3600 seconds
+[rank0]:[W1104 14:39:06.571167302 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank3]:[W1104 14:39:06.571720950 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank1]:[W1104 14:39:06.572916926 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank2]:[W1104 14:39:06.573747460 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[11-04 14:39:06] Found nccl from library libnccl.so.2
+[11-04 14:39:06] sglang-diffusion is using nccl==2.30.7
+[11-04 14:39:07] Found nccl from library libnccl.so.2
+[11-04 14:39:07] sglang-diffusion is using nccl==2.30.7
+[11-04 14:39:07] generating GPU P2P access cache in /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 14:39:30] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 14:39:30] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 14:39:30] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 14:39:30] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[93m[11-04 14:39:30] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+[93m[11-04 14:39:30] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+[93m[11-04 14:39:30] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+[93m[11-04 14:39:30] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+Process sglang-diffusionWorker-3:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 160, in build
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ninja'
+Process sglang-diffusionWorker-2:
+Process sglang-diffusionWorker-1:
+[11-04 14:39:33] Worker 0: Shutdown complete.
+Process sglang-diffusionWorker-0:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 160, in build
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ninja'
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 160, in build
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ninja'
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 160, in build
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ninja'
+[91m[11-04 14:39:35] Rank 0 scheduler is dead. Please check if there are relevant logs.[0;0m
+[91m[11-04 14:39:35] Exit code: 1[0;0m
+[11-04 14:39:35] kill_process_tree called: parent_pid=1594925, include_parent=False, pid=1594925
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/runtime-venv/bin/sglang", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/main.py", line 51, in main
+    serve(args, extra_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 213, in serve
+    registered.backend.run(request)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 131, in _run_diffusion
+    execute_serve_cmd(parsed_args, remaining_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/entrypoints/cli/serve.py", line 39, in execute_serve_cmd
+    dispatch_launch(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 786, in dispatch_launch
+    launch_server(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 196, in launch_server
+    data = reader.recv()
+           ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+          ^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 430, in _recv_bytes
+    buf = self._recv(4)
+          ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 399, in _recv
+    raise EOFError
+EOFError
+[11-04 14:53:53] Applying performance_mode=speed
+[11-04 14:53:53] performance_mode=speed keeps torch.compile disabled for this model (pass --enable-torch-compile true to opt in)
+[11-04 14:53:54] Proposed encoder parallel folding (mode=world) for ServerArgs (tp=2 sp=2 cfg=1 replica=4); the loader keeps it for encoders wide enough to benefit.
+[11-04 14:53:54] server_args: {"model_path": "/data/users/example/h3-turbo4/models/MiniMax-H3", "model_subfolder": null, "model_variant": "fl2va", "model_id": null, "served_model_name": "/data/users/example/h3-turbo4/models/MiniMax-H3", "backend": "auto", "attention_backend": null, "enable_attention_backend_autotune": false, "attention_backend_config": {}, "component_attention_backends": {}, "component_attention_backend_roles": {}, "cache_dit_config": null, "nccl_port": null, "enable_nccl_nvls": false, "trust_remote_code": false, "revision": null, "num_gpus": 4, "performance_mode": "speed", "base_gpu_id": 0, "gpu_ids": null, "numa_node": null, "nnodes": 1, "node_rank": 0, "dist_init_addr": null, "tp_size": 2, "sp_degree": 2, "ulysses_degree": 2, "ring_degree": 1, "kv_gather_degree": 1, "sp_split_auto": false, "dp_size": 1, "enable_cfg_parallel": false, "cfg_parallel_degree": 1, "encoder_parallel": "auto", "hsdp_replicate_dim": 1, "hsdp_shard_dim": 4, "dist_timeout": 3600, "scheduler_rpc_timeout": null, "pipeline_class_name": null, "lora_path": "/data/users/example/h3-turbo4/models/turbo-v4/minimax_h3_turbo_v4_step600_ema.safetensors", "lora_nickname": "h3-turbo-v4", "lora_scale": 1.0, "lora_alpha": null, "lora_merge_mode": "dynamic", "lora_weight_name": null, "component_paths": {}, "component_weights_paths": {}, "component_direct_gpu_weight_loading": {}, "component_quantizations": {}, "component_precisions": {}, "component_quantization_ignored_layers": {}, "load_diffusion_decoder": false, "transformer_weights_path": null, "minimax_h3_adaln_cache_path": null, "minimax_h3_adaln_online": false, "minimax_h3_adaln_plan_width": 4, "minimax_h3_adaln_host_cache_gb": 8.0, "quantization": null, "quantization_ignored_layers": null, "lora_target_modules": null, "component_residency": null, "cpu_offload_components": null, "dit_cpu_offload": false, "direct_gpu_weight_loading": false, "dit_layerwise_offload": false, "layerwise_offload_components": null, "dit_offload_prefetch_size": 0.0, "dit_layerwise_resident_layers": 0.0, "dit_layerwise_residency_policy": "leading", "dit_layerwise_residency_lifetime": "forward", "layerwise_prefetch_size": {}, "layerwise_resident_layers": {}, "layerwise_residency_policy": {}, "layerwise_residency_lifetime": {}, "offload_during_compile": true, "text_encoder_cpu_offload": false, "image_encoder_cpu_offload": false, "vae_cpu_offload": false, "use_fsdp_inference": false, "pin_cpu_memory": true, "ltx2_two_stage_device_mode": null, "comfyui_mode": false, "enable_torch_compile": false, "regional_compile": false, "allow_cudnn_tf32": true, "allow_bf16_reduced_precision_reduction": true, "enable_breakable_cuda_graph": false, "bcg_text_buckets": null, "enable_layerwise_nvtx_marker": false, "warmup_mode": "server", "warmup_resolutions": null, "warmup_num_frames": null, "warmup_steps": 1, "warmup_sampling_params": null, "disable_autocast": false, "master_port": 30005, "host": "127.0.0.1", "port": 30010, "enable_metrics": false, "webui": false, "webui_port": 12312, "scheduler_port": 5583, "scheduler_ports": [5583], "batching_mode": "dynamic", "batching_max_size": 1, "batching_delay_ms": 0.0, "batching_config": null, "enable_batching_metrics": false, "async_output_save": false, "strict_ports": false, "output_path": "/data/users/example/h3-turbo4/outputs", "input_save_path": "inputs/uploads", "prompt_file_path": null, "model_paths": {}, "model_loaded": {"transformer": true, "vae": true, "video_vae": true, "audio_vae": true, "video_dit": true, "audio_dit": true, "dual_tower_bridge": true}, "boundary_ratio": null, "disagg_role": "monolithic", "disagg_timeout": 3600, "disagg_downstream_wait_timeout": 1800, "disagg_dispatch_policy": "round_robin", "disagg_mode": false, "disagg_instance_id": 0, "disagg_max_slots_per_instance": 8, "disagg_transfer_redundancy": 1.25, "disagg_role_device": "auto", "disagg_transfer_backend": "auto", "disagg_transfer_pool_size": 268435456, "disagg_transfer_pin_memory": "auto", "disagg_p2p_hostname": "127.0.0.1", "disagg_ib_device": null, "disagg_server_addr": null, "encoder_urls": null, "denoiser_urls": null, "decoder_urls": null, "encoder_tp": null, "denoiser_tp": null, "denoiser_sp": null, "denoiser_ulysses": null, "denoiser_ring": null, "decoder_sp": null, "pool_work_endpoint": null, "pool_result_endpoint": null, "pool_control_endpoint": null, "pool_control_advertised_endpoint": null, "log_level": "info", "log_requests": false, "log_requests_level": 2, "log_requests_format": "text", "log_requests_target": null, "uvicorn_access_log_exclude_prefixes": [], "enable_cache_report": false, "disable_conditioning_cache": false, "conditioning_cache_max_size_mb": 512.0, "enable_trace": false, "otlp_traces_endpoint": "localhost:4317", "otlp_service_name": null, "srt_encoder_url": null, "srt_encoder_connect_timeout": 3.05, "srt_encoder_timeout": 100, "pe_server_url": null, "prompt_enhancer_config": null}
+[11-04 14:53:54] Starting server...
+[11-04 14:54:07] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 14:54:08] Scheduler (dp replica 0) bind at endpoint: tcp://127.0.0.1:5583
+[11-04 14:54:08] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 14:54:08] torch.compile cache: TORCHINDUCTOR_CACHE_DIR=/data/users/example/h3-turbo4/cache/inductor TRITON_CACHE_DIR=/data/users/example/h3-turbo4/cache/triton
+[11-04 14:54:08] Initializing distributed environment with world_size=4, device=cuda:0, timeout=3600
+[11-04 14:54:08] Setting distributed timeout to 3600 seconds
+[11-04 14:54:08] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 14:54:08] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[rank1]:[W1104 14:54:12.734295837 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank2]:[W1104 14:54:12.736027700 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank0]:[W1104 14:54:12.744049067 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank3]:[W1104 14:54:12.744077877 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[11-04 14:54:12] Found nccl from library libnccl.so.2
+[11-04 14:54:12] sglang-diffusion is using nccl==2.30.7
+[11-04 14:54:13] Found nccl from library libnccl.so.2
+[11-04 14:54:13] sglang-diffusion is using nccl==2.30.7
+[11-04 14:54:15] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 14:54:15] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 14:54:15] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 14:54:15] reading GPU P2P access cache from /home/example/.cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[93m[11-04 14:54:15] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+[93m[11-04 14:54:15] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+[93m[11-04 14:54:15] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+[93m[11-04 14:54:15] Cannot fingerprint compiler c++: [Errno 2] No such file or directory: 'c++'[0;0m
+Process sglang-diffusionWorker-3:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_communicator in /home/example/.cache/sglang/jit/sm90a/sgl_kernel_jit_communicator/build-968ce18855558e2d/.staging-27fbcbd1d45c4669992e2b8b22e19290
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PushPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 124 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PullPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 131 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+FAILED: [code=127] sgl_kernel_jit_communicator.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+/bin/sh: 1: c++: not found
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+Process sglang-diffusionWorker-2:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_communicator in /home/example/.cache/sglang/jit/sm90a/sgl_kernel_jit_communicator/build-968ce18855558e2d/.staging-26ca31108e8d4ef6b374bb2f723beed0
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PushPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 124 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PullPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 131 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+FAILED: [code=127] sgl_kernel_jit_communicator.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+/bin/sh: 1: c++: not found
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+Process sglang-diffusionWorker-1:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_communicator in /home/example/.cache/sglang/jit/sm90a/sgl_kernel_jit_communicator/build-968ce18855558e2d/.staging-0ebec656dc7b4258a6ea630bad886117
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PushPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 124 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PullPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 131 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+FAILED: [code=127] sgl_kernel_jit_communicator.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+/bin/sh: 1: c++: not found
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+[11-04 14:54:50] Worker 0: Shutdown complete.
+Process sglang-diffusionWorker-0:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_communicator in /home/example/.cache/sglang/jit/sm90a/sgl_kernel_jit_communicator/build-968ce18855558e2d/.staging-3d895163d16c446fa8d80be23e69dce2
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PushPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 124 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PullPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 131 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+FAILED: [code=127] sgl_kernel_jit_communicator.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+/bin/sh: 1: c++: not found
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+[91m[11-04 14:54:53] Rank 0 scheduler is dead. Please check if there are relevant logs.[0;0m
+[91m[11-04 14:54:53] Exit code: 1[0;0m
+[11-04 14:54:53] kill_process_tree called: parent_pid=1848047, include_parent=False, pid=1848047
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/runtime-venv/bin/sglang", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/main.py", line 51, in main
+    serve(args, extra_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 213, in serve
+    registered.backend.run(request)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 131, in _run_diffusion
+    execute_serve_cmd(parsed_args, remaining_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/entrypoints/cli/serve.py", line 39, in execute_serve_cmd
+    dispatch_launch(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 786, in dispatch_launch
+    launch_server(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 196, in launch_server
+    data = reader.recv()
+           ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+          ^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 430, in _recv_bytes
+    buf = self._recv(4)
+          ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 399, in _recv
+    raise EOFError
+EOFError
+[11-04 15:05:05] Applying performance_mode=speed
+[11-04 15:05:05] performance_mode=speed keeps torch.compile disabled for this model (pass --enable-torch-compile true to opt in)
+[11-04 15:05:05] Proposed encoder parallel folding (mode=world) for ServerArgs (tp=2 sp=2 cfg=1 replica=4); the loader keeps it for encoders wide enough to benefit.
+[11-04 15:05:05] server_args: {"model_path": "/data/users/example/h3-turbo4/models/MiniMax-H3", "model_subfolder": null, "model_variant": "fl2va", "model_id": null, "served_model_name": "/data/users/example/h3-turbo4/models/MiniMax-H3", "backend": "auto", "attention_backend": null, "enable_attention_backend_autotune": false, "attention_backend_config": {}, "component_attention_backends": {}, "component_attention_backend_roles": {}, "cache_dit_config": null, "nccl_port": null, "enable_nccl_nvls": false, "trust_remote_code": false, "revision": null, "num_gpus": 4, "performance_mode": "speed", "base_gpu_id": 0, "gpu_ids": null, "numa_node": null, "nnodes": 1, "node_rank": 0, "dist_init_addr": null, "tp_size": 2, "sp_degree": 2, "ulysses_degree": 2, "ring_degree": 1, "kv_gather_degree": 1, "sp_split_auto": false, "dp_size": 1, "enable_cfg_parallel": false, "cfg_parallel_degree": 1, "encoder_parallel": "auto", "hsdp_replicate_dim": 1, "hsdp_shard_dim": 4, "dist_timeout": 3600, "scheduler_rpc_timeout": null, "pipeline_class_name": null, "lora_path": "/data/users/example/h3-turbo4/models/turbo-v4/minimax_h3_turbo_v4_step600_ema.safetensors", "lora_nickname": "h3-turbo-v4", "lora_scale": 1.0, "lora_alpha": null, "lora_merge_mode": "dynamic", "lora_weight_name": null, "component_paths": {}, "component_weights_paths": {}, "component_direct_gpu_weight_loading": {}, "component_quantizations": {}, "component_precisions": {}, "component_quantization_ignored_layers": {}, "load_diffusion_decoder": false, "transformer_weights_path": null, "minimax_h3_adaln_cache_path": null, "minimax_h3_adaln_online": false, "minimax_h3_adaln_plan_width": 4, "minimax_h3_adaln_host_cache_gb": 8.0, "quantization": null, "quantization_ignored_layers": null, "lora_target_modules": null, "component_residency": null, "cpu_offload_components": null, "dit_cpu_offload": false, "direct_gpu_weight_loading": false, "dit_layerwise_offload": false, "layerwise_offload_components": null, "dit_offload_prefetch_size": 0.0, "dit_layerwise_resident_layers": 0.0, "dit_layerwise_residency_policy": "leading", "dit_layerwise_residency_lifetime": "forward", "layerwise_prefetch_size": {}, "layerwise_resident_layers": {}, "layerwise_residency_policy": {}, "layerwise_residency_lifetime": {}, "offload_during_compile": true, "text_encoder_cpu_offload": false, "image_encoder_cpu_offload": false, "vae_cpu_offload": false, "use_fsdp_inference": false, "pin_cpu_memory": true, "ltx2_two_stage_device_mode": null, "comfyui_mode": false, "enable_torch_compile": false, "regional_compile": false, "allow_cudnn_tf32": true, "allow_bf16_reduced_precision_reduction": true, "enable_breakable_cuda_graph": false, "bcg_text_buckets": null, "enable_layerwise_nvtx_marker": false, "warmup_mode": "server", "warmup_resolutions": null, "warmup_num_frames": null, "warmup_steps": 1, "warmup_sampling_params": null, "disable_autocast": false, "master_port": 30005, "host": "127.0.0.1", "port": 30010, "enable_metrics": false, "webui": false, "webui_port": 12312, "scheduler_port": 5573, "scheduler_ports": [5573], "batching_mode": "dynamic", "batching_max_size": 1, "batching_delay_ms": 0.0, "batching_config": null, "enable_batching_metrics": false, "async_output_save": false, "strict_ports": false, "output_path": "/data/users/example/h3-turbo4/outputs", "input_save_path": "inputs/uploads", "prompt_file_path": null, "model_paths": {}, "model_loaded": {"transformer": true, "vae": true, "video_vae": true, "audio_vae": true, "video_dit": true, "audio_dit": true, "dual_tower_bridge": true}, "boundary_ratio": null, "disagg_role": "monolithic", "disagg_timeout": 3600, "disagg_downstream_wait_timeout": 1800, "disagg_dispatch_policy": "round_robin", "disagg_mode": false, "disagg_instance_id": 0, "disagg_max_slots_per_instance": 8, "disagg_transfer_redundancy": 1.25, "disagg_role_device": "auto", "disagg_transfer_backend": "auto", "disagg_transfer_pool_size": 268435456, "disagg_transfer_pin_memory": "auto", "disagg_p2p_hostname": "127.0.0.1", "disagg_ib_device": null, "disagg_server_addr": null, "encoder_urls": null, "denoiser_urls": null, "decoder_urls": null, "encoder_tp": null, "denoiser_tp": null, "denoiser_sp": null, "denoiser_ulysses": null, "denoiser_ring": null, "decoder_sp": null, "pool_work_endpoint": null, "pool_result_endpoint": null, "pool_control_endpoint": null, "pool_control_advertised_endpoint": null, "log_level": "info", "log_requests": false, "log_requests_level": 2, "log_requests_format": "text", "log_requests_target": null, "uvicorn_access_log_exclude_prefixes": [], "enable_cache_report": false, "disable_conditioning_cache": false, "conditioning_cache_max_size_mb": 512.0, "enable_trace": false, "otlp_traces_endpoint": "localhost:4317", "otlp_service_name": null, "srt_encoder_url": null, "srt_encoder_connect_timeout": 3.05, "srt_encoder_timeout": 100, "pe_server_url": null, "prompt_enhancer_config": null}
+[11-04 15:05:05] Starting server...
+[11-04 15:05:18] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 15:05:18] Scheduler (dp replica 0) bind at endpoint: tcp://127.0.0.1:5573
+[11-04 15:05:19] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 15:05:19] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 15:05:19] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 15:05:19] torch.compile cache: TORCHINDUCTOR_CACHE_DIR=/data/users/example/h3-turbo4/cache/inductor TRITON_CACHE_DIR=/data/users/example/h3-turbo4/cache/triton
+[11-04 15:05:19] Initializing distributed environment with world_size=4, device=cuda:0, timeout=3600
+[11-04 15:05:19] Setting distributed timeout to 3600 seconds
+[rank2]:[W1104 15:05:25.744869007 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank3]:[W1104 15:05:25.750792246 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank0]:[W1104 15:05:25.750853410 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank1]:[W1104 15:05:25.753482602 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[11-04 15:05:25] Found nccl from library libnccl.so.2
+[11-04 15:05:25] sglang-diffusion is using nccl==2.30.7
+[11-04 15:05:34] Found nccl from library libnccl.so.2
+[11-04 15:05:34] sglang-diffusion is using nccl==2.30.7
+[11-04 15:05:35] generating GPU P2P access cache in /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:05:57] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:05:57] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:05:57] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:05:57] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+Process sglang-diffusionWorker-1:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_communicator in /data/users/example/h3-turbo4/cache/sglang/jit/sm90a/sgl_kernel_jit_communicator/build-2bffe7d92c7850a2/.staging-77d80d8a8483441bbd9e7fc46ff023d8
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PushPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 124 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PullPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 131 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+FAILED: [code=1] sgl_kernel_jit_communicator.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+/usr/bin/ld: cannot find -lcudart: No such file or directory
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+[11-04 15:06:16] Worker 0: Shutdown complete.
+Process sglang-diffusionWorker-0:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 204, in __init__
+    self._init_workspace()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 265, in _init_workspace
+    push_plane = PushPlane(
+                 ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 39, in wrapper
+    result_map[key] = fn(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 48, in _init_communicator
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_communicator in /data/users/example/h3-turbo4/cache/sglang/jit/sm90a/sgl_kernel_jit_communicator/build-2bffe7d92c7850a2/.staging-686333439e2e45a6a65c8a40d8be8cba
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PushPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PushPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 124 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/object.h(1107): warning #1427-D: offsetof applied to a type other than a standard-layout class
+      return static_cast<int64_t>(__builtin_offsetof(Class, header_)) -
+                                                     ^
+          detected during:
+            instantiation of "int64_t tvm::ffi::details::ObjectUnsafe::GetObjectOffsetToSubclass<Class>() [with Class=sglang::host::distributed::PullPlaneObj]" at line 367 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "int64_t tvm::ffi::reflection::GetFieldByteOffsetToObject(T Class::*) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t]" at line 910 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "void tvm::ffi::reflection::ObjectDef<Class>::RegisterField(const char *, T BaseClass::*, __nv_bool, ExtraArgs &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, ExtraArgs=<>]" at line 768 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include/tvm/ffi/reflection/registry.h
+            instantiation of "tvm::ffi::reflection::ObjectDef<Class> &tvm::ffi::reflection::ObjectDef<Class>::def_ro(const char *, T BaseClass::*, Extra &&...) [with Class=sglang::host::distributed::PullPlaneObj, T=uint32_t, BaseClass=sglang::host::distributed::BasePlane, Extra=<>]" at line 131 of /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/csrc/distributed/registry.cuh
+
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+FAILED: [code=1] sgl_kernel_jit_communicator.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -o "sgl_kernel_jit_communicator.so"
+/usr/bin/ld: cannot find -lcudart: No such file or directory
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+[91m[11-04 15:06:18] Rank 0 scheduler is dead. Please check if there are relevant logs.[0;0m
+[91m[11-04 15:06:18] Exit code: 1[0;0m
+[11-04 15:06:18] kill_process_tree called: parent_pid=2022490, include_parent=False, pid=2022490
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/runtime-venv/bin/sglang", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/main.py", line 51, in main
+    serve(args, extra_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 213, in serve
+    registered.backend.run(request)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 131, in _run_diffusion
+    execute_serve_cmd(parsed_args, remaining_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/entrypoints/cli/serve.py", line 39, in execute_serve_cmd
+    dispatch_launch(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 786, in dispatch_launch
+    launch_server(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 196, in launch_server
+    data = reader.recv()
+           ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+          ^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 430, in _recv_bytes
+    buf = self._recv(4)
+          ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 399, in _recv
+    raise EOFError
+EOFError
+[11-04 15:07:42] Applying performance_mode=speed
+[11-04 15:07:42] performance_mode=speed keeps torch.compile disabled for this model (pass --enable-torch-compile true to opt in)
+[11-04 15:07:43] Proposed encoder parallel folding (mode=world) for ServerArgs (tp=2 sp=2 cfg=1 replica=4); the loader keeps it for encoders wide enough to benefit.
+[11-04 15:07:43] server_args: {"model_path": "/data/users/example/h3-turbo4/models/MiniMax-H3", "model_subfolder": null, "model_variant": "fl2va", "model_id": null, "served_model_name": "/data/users/example/h3-turbo4/models/MiniMax-H3", "backend": "auto", "attention_backend": null, "enable_attention_backend_autotune": false, "attention_backend_config": {}, "component_attention_backends": {}, "component_attention_backend_roles": {}, "cache_dit_config": null, "nccl_port": null, "enable_nccl_nvls": false, "trust_remote_code": false, "revision": null, "num_gpus": 4, "performance_mode": "speed", "base_gpu_id": 0, "gpu_ids": null, "numa_node": null, "nnodes": 1, "node_rank": 0, "dist_init_addr": null, "tp_size": 2, "sp_degree": 2, "ulysses_degree": 2, "ring_degree": 1, "kv_gather_degree": 1, "sp_split_auto": false, "dp_size": 1, "enable_cfg_parallel": false, "cfg_parallel_degree": 1, "encoder_parallel": "auto", "hsdp_replicate_dim": 1, "hsdp_shard_dim": 4, "dist_timeout": 3600, "scheduler_rpc_timeout": null, "pipeline_class_name": null, "lora_path": "/data/users/example/h3-turbo4/models/turbo-v4/minimax_h3_turbo_v4_step600_ema.safetensors", "lora_nickname": "h3-turbo-v4", "lora_scale": 1.0, "lora_alpha": null, "lora_merge_mode": "dynamic", "lora_weight_name": null, "component_paths": {}, "component_weights_paths": {}, "component_direct_gpu_weight_loading": {}, "component_quantizations": {}, "component_precisions": {}, "component_quantization_ignored_layers": {}, "load_diffusion_decoder": false, "transformer_weights_path": null, "minimax_h3_adaln_cache_path": null, "minimax_h3_adaln_online": false, "minimax_h3_adaln_plan_width": 4, "minimax_h3_adaln_host_cache_gb": 8.0, "quantization": null, "quantization_ignored_layers": null, "lora_target_modules": null, "component_residency": null, "cpu_offload_components": null, "dit_cpu_offload": false, "direct_gpu_weight_loading": false, "dit_layerwise_offload": false, "layerwise_offload_components": null, "dit_offload_prefetch_size": 0.0, "dit_layerwise_resident_layers": 0.0, "dit_layerwise_residency_policy": "leading", "dit_layerwise_residency_lifetime": "forward", "layerwise_prefetch_size": {}, "layerwise_resident_layers": {}, "layerwise_residency_policy": {}, "layerwise_residency_lifetime": {}, "offload_during_compile": true, "text_encoder_cpu_offload": false, "image_encoder_cpu_offload": false, "vae_cpu_offload": false, "use_fsdp_inference": false, "pin_cpu_memory": true, "ltx2_two_stage_device_mode": null, "comfyui_mode": false, "enable_torch_compile": false, "regional_compile": false, "allow_cudnn_tf32": true, "allow_bf16_reduced_precision_reduction": true, "enable_breakable_cuda_graph": false, "bcg_text_buckets": null, "enable_layerwise_nvtx_marker": false, "warmup_mode": "server", "warmup_resolutions": null, "warmup_num_frames": null, "warmup_steps": 1, "warmup_sampling_params": null, "disable_autocast": false, "master_port": 30005, "host": "127.0.0.1", "port": 30010, "enable_metrics": false, "webui": false, "webui_port": 12312, "scheduler_port": 5558, "scheduler_ports": [5558], "batching_mode": "dynamic", "batching_max_size": 1, "batching_delay_ms": 0.0, "batching_config": null, "enable_batching_metrics": false, "async_output_save": false, "strict_ports": false, "output_path": "/data/users/example/h3-turbo4/outputs", "input_save_path": "inputs/uploads", "prompt_file_path": null, "model_paths": {}, "model_loaded": {"transformer": true, "vae": true, "video_vae": true, "audio_vae": true, "video_dit": true, "audio_dit": true, "dual_tower_bridge": true}, "boundary_ratio": null, "disagg_role": "monolithic", "disagg_timeout": 3600, "disagg_downstream_wait_timeout": 1800, "disagg_dispatch_policy": "round_robin", "disagg_mode": false, "disagg_instance_id": 0, "disagg_max_slots_per_instance": 8, "disagg_transfer_redundancy": 1.25, "disagg_role_device": "auto", "disagg_transfer_backend": "auto", "disagg_transfer_pool_size": 268435456, "disagg_transfer_pin_memory": "auto", "disagg_p2p_hostname": "127.0.0.1", "disagg_ib_device": null, "disagg_server_addr": null, "encoder_urls": null, "denoiser_urls": null, "decoder_urls": null, "encoder_tp": null, "denoiser_tp": null, "denoiser_sp": null, "denoiser_ulysses": null, "denoiser_ring": null, "decoder_sp": null, "pool_work_endpoint": null, "pool_result_endpoint": null, "pool_control_endpoint": null, "pool_control_advertised_endpoint": null, "log_level": "info", "log_requests": false, "log_requests_level": 2, "log_requests_format": "text", "log_requests_target": null, "uvicorn_access_log_exclude_prefixes": [], "enable_cache_report": false, "disable_conditioning_cache": false, "conditioning_cache_max_size_mb": 512.0, "enable_trace": false, "otlp_traces_endpoint": "localhost:4317", "otlp_service_name": null, "srt_encoder_url": null, "srt_encoder_connect_timeout": 3.05, "srt_encoder_timeout": 100, "pe_server_url": null, "prompt_enhancer_config": null}
+[11-04 15:07:43] Starting server...
+[11-04 15:08:00] Scheduler (dp replica 0) bind at endpoint: tcp://127.0.0.1:5558
+[11-04 15:08:00] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 15:08:01] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 15:08:01] torch.compile cache: TORCHINDUCTOR_CACHE_DIR=/data/users/example/h3-turbo4/cache/inductor TRITON_CACHE_DIR=/data/users/example/h3-turbo4/cache/triton
+[11-04 15:08:01] Initializing distributed environment with world_size=4, device=cuda:0, timeout=3600
+[11-04 15:08:01] Setting distributed timeout to 3600 seconds
+[11-04 15:08:01] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[11-04 15:08:01] Numerics policy: cudnn TF32 and bf16 reduced-precision reduction enabled. These lower precision below the reference, so quality='exact' is bit-reproducible on this server but not free of approximate library defaults. Pass --allow-cudnn-tf32 false --allow-bf16-reduced-precision-reduction false for the strict contract (slower fp32 convolutions).
+[rank3]:[W1104 15:08:04.827979930 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank2]:[W1104 15:08:04.828251911 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank1]:[W1104 15:08:04.828723275 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[rank0]:[W1104 15:08:04.830867566 ProcessGroupGloo.cpp:527] Warning: Unable to resolve hostname to a (local) address. Using the loopback address as fallback. Manually set the network interface to bind to with GLOO_SOCKET_IFNAME. (function operator())
+[11-04 15:08:04] Found nccl from library libnccl.so.2
+[11-04 15:08:04] sglang-diffusion is using nccl==2.30.7
+[11-04 15:08:06] Found nccl from library libnccl.so.2
+[11-04 15:08:06] sglang-diffusion is using nccl==2.30.7
+[11-04 15:08:07] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:08:07] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:08:07] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:08:07] reading GPU P2P access cache from /data/users/example/h3-turbo4/cache/sglang/gpu_p2p_access_cache_for_0,1,2,3.json
+[11-04 15:08:16] All Reduce config: symmetric_memory = 160.01 MB, local_buffer = 2.00 MB, multicast = False, pull = True
+[11-04 15:08:16] All Reduce config: symmetric_memory = 160.01 MB, local_buffer = 2.00 MB, multicast = False, pull = True
+Process sglang-diffusionWorker-3:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 205, in __init__
+    self._ipc_manager = IPCManager()
+                        ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 184, in _init_ipc_manager
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_cuda_ipc in /data/users/example/h3-turbo4/cache/sglang/jit/sm90a/sgl_kernel_jit_cuda_ipc/build-43f0f4c3f3625afe/.staging-7054ed601b994da1994ce2b54d287948
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64/stubs -lcuda -o "sgl_kernel_jit_cuda_ipc.so"
+FAILED: [code=1] sgl_kernel_jit_cuda_ipc.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64/stubs -lcuda -o "sgl_kernel_jit_cuda_ipc.so"
+/usr/bin/ld: cannot find -lcuda: No such file or directory
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+Process sglang-diffusionWorker-2:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 205, in __init__
+    self._ipc_manager = IPCManager()
+                        ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 184, in _init_ipc_manager
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_cuda_ipc in /data/users/example/h3-turbo4/cache/sglang/jit/sm90a/sgl_kernel_jit_cuda_ipc/build-43f0f4c3f3625afe/.staging-24cab244c4e2400bbbaae8919fc51204
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64/stubs -lcuda -o "sgl_kernel_jit_cuda_ipc.so"
+FAILED: [code=1] sgl_kernel_jit_cuda_ipc.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64/stubs -lcuda -o "sgl_kernel_jit_cuda_ipc.so"
+/usr/bin/ld: cannot find -lcuda: No such file or directory
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+[11-04 15:08:39] Worker 0: Shutdown complete.
+Process sglang-diffusionWorker-0:
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/worker_bootstrap.py", line 147, in bootstrap_scheduler_process
+    gpu_worker.run_scheduler_process(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 1797, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/scheduler.py", line 159, in __init__
+    worker = Exec_worker(
+             ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 291, in __init__
+    self.init_device_and_model()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/managers/gpu_worker.py", line 446, in init_device_and_model
+    maybe_init_distributed_environment_and_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 690, in maybe_init_distributed_environment_and_model_parallel
+    initialize_model_parallel(
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 537, in initialize_model_parallel
+    _TP = init_parallel_group_coordinator(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/parallel_state.py", line 242, in init_parallel_group_coordinator
+    return GroupCoordinator(
+           ^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 241, in __init__
+    self._init_srt_custom_allreduce()
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/distributed/group_coordinator.py", line 270, in _init_srt_custom_allreduce
+    self.srt_custom_allreduce = custom_allreduce_cls(**custom_allreduce_kwargs)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/srt/distributed/device_communicators/custom_all_reduce_v2.py", line 205, in __init__
+    self._ipc_manager = IPCManager()
+                        ^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/common.py", line 80, in __new__
+    init_fn()  # lazy initialization before registration once
+    ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/ops/communication/all_reduce.py", line 184, in _init_ipc_manager
+    module = load_jit(
+             ^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/loader.py", line 178, in load_jit
+    library = ninja.build(spec=spec, build_dir=staging, build_file=build_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/utils/compile/ninja.py", line 169, in build
+    raise RuntimeError(
+RuntimeError: Failed to build JIT module sgl_kernel_jit_cuda_ipc in /data/users/example/h3-turbo4/cache/sglang/jit/sm90a/sgl_kernel_jit_cuda_ipc/build-43f0f4c3f3625afe/.staging-644cad6f752840389f4e2bc3dd206848
+stdout:
+[1/2] /data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -MD -MF "cuda_0.o.d" -Xcompiler -fPIC -gencode=arch=compute_90a,code=sm_90a -DSGL_CUDA_ARCH=900 -std=c++20 -O3 --expt-relaxed-constexpr -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/include -I/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/kernels/jit/include -c "cuda.cu" -o "cuda_0.o"
+[2/2] c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64/stubs -lcuda -o "sgl_kernel_jit_cuda_ipc.so"
+FAILED: [code=1] sgl_kernel_jit_cuda_ipc.so 
+c++ cuda_0.o -shared -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/tvm_ffi/lib -ltvm_ffi -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64 -lcudart -L/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/nvidia/cu13/lib64/stubs -lcuda -o "sgl_kernel_jit_cuda_ipc.so"
+/usr/bin/ld: cannot find -lcuda: No such file or directory
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+stderr:
+
+[91m[11-04 15:08:41] Rank 0 scheduler is dead. Please check if there are relevant logs.[0;0m
+[91m[11-04 15:08:41] Exit code: 1[0;0m
+[11-04 15:08:41] kill_process_tree called: parent_pid=2063064, include_parent=False, pid=2063064
+Traceback (most recent call last):
+  File "/data/users/example/h3-turbo4/runtime-venv/bin/sglang", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/main.py", line 51, in main
+    serve(args, extra_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 213, in serve
+    registered.backend.run(request)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/cli/serve.py", line 131, in _run_diffusion
+    execute_serve_cmd(parsed_args, remaining_argv)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/entrypoints/cli/serve.py", line 39, in execute_serve_cmd
+    dispatch_launch(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 786, in dispatch_launch
+    launch_server(server_args)
+  File "/data/users/example/h3-turbo4/runtime-venv/lib/python3.12/site-packages/sglang/multimodal_gen/runtime/launch_server.py", line 196, in launch_server
+    data = reader.recv()
+           ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+          ^^^^^^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 430, in _recv_bytes
+    buf = self._recv(4)
+          ^^^^^^^^^^^^^
+  File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/multiprocessing/connection.py", line 399, in _recv
+    raise EOFError
+EOFError

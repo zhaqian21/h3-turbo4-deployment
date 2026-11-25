@@ -1,0 +1,844 @@
+Using Python 3.12.16 environment at: /data/users/example/h3-turbo4/runtime-venv
+error: No solution found when resolving dependencies
+  cause: Because sglang[diffusion]==0.5.22 has no wheels with a matching platform tag (e.g., `manylinux_2_32_x86_64`) and you require sglang[diffusion]==0.5.22, we can conclude that your requirements are unsatisfiable.
+
+hint: Wheels are available for `sglang` (v0.5.22) on the following platforms: `manylinux_2_34_aarch64`, `manylinux_2_34_x86_64`
+Using Python 3.12.16 environment at: /data/users/example/h3-turbo4/runtime-venv
+Resolved 234 packages in 6.31s
+Downloading nvidia-mathdx (21.9MiB)
+Downloading torch (528.9MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading triton (236.5MiB)
+Downloading sglang-kernel (354.2MiB)
+Downloading nvidia-nccl-cu13 (206.0MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading tokenspeed-triton (90.5MiB)
+Downloading nvidia-cutlass-dsl-libs-cu13 (87.7MiB)
+Downloading nvidia-cutlass-dsl-libs-cu12 (87.5MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading nvidia-nvvm (69.2MiB)
+Downloading flashinfer-python (64.1MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading llvmlite (53.7MiB)
+Downloading pyarrow (52.5MiB)
+Downloading tilelang (48.2MiB)
+Downloading opencv-python-headless (47.5MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading nvidia-nvjitlink (40.5MiB)
+Downloading av (39.3MiB)
+Downloading scipy (33.7MiB)
+Downloading sglang (32.8MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading z3-solver (27.9MiB)
+Downloading nccl-extensions (21.5MiB)
+Downloading numpy (15.8MiB)
+Downloading pulp (15.6MiB)
+Downloading sgl-deep-ep (14.7MiB)
+Downloading transformers (12.0MiB)
+Downloading scikit-image (14.3MiB)
+Downloading pandas (11.5MiB)
+Downloading nvidia-cudnn-frontend (11.1MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading torchcodec (9.5MiB)
+Downloading pycountry (7.7MiB)
+Downloading torchvision (7.2MiB)
+Downloading grpcio (7.0MiB)
+Downloading cuda-bindings (6.8MiB)
+Downloading pillow (6.3MiB)
+Downloading cuda-core (6.3MiB)
+Downloading mistral-common (6.3MiB)
+Downloading sympy (6.0MiB)
+Downloading zstandard (5.3MiB)
+Downloading sgl-deep-gemm (5.2MiB)
+Using Python 3.12.16 environment at: runtime-venv
+Resolved 234 packages in 1.56s
+Downloading sglang-kernel (354.2MiB)
+Downloading nvidia-nccl-cu13 (206.0MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading torch (528.9MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading tokenspeed-triton (90.5MiB)
+Downloading nvidia-cutlass-dsl-libs-cu13 (87.7MiB)
+Downloading nvidia-cutlass-dsl-libs-cu12 (87.5MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading nvidia-nvvm (69.2MiB)
+Downloading flashinfer-python (64.1MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading llvmlite (53.7MiB)
+Downloading pyarrow (52.5MiB)
+Downloading tilelang (48.2MiB)
+Downloading opencv-python-headless (47.5MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading nvidia-nvjitlink (40.5MiB)
+Downloading av (39.3MiB)
+Downloading scipy (33.7MiB)
+Downloading sglang (32.8MiB)
+Downloading z3-solver (27.9MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading nvidia-mathdx (21.9MiB)
+Downloading nccl-extensions (21.5MiB)
+Downloading numpy (15.8MiB)
+Downloading pulp (15.6MiB)
+Downloading sgl-deep-ep (14.7MiB)
+Downloading scikit-image (14.3MiB)
+Downloading transformers (12.0MiB)
+Downloading pandas (11.5MiB)
+Downloading nvidia-cudnn-frontend (11.1MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading torchcodec (9.5MiB)
+Downloading pycountry (7.7MiB)
+Downloading torchvision (7.2MiB)
+Downloading grpcio (7.0MiB)
+Downloading cuda-bindings (6.8MiB)
+Downloading pillow (6.3MiB)
+Downloading cuda-core (6.3MiB)
+Downloading mistral-common (6.3MiB)
+Downloading sympy (6.0MiB)
+Downloading zstandard (5.3MiB)
+Downloading sgl-deep-gemm (5.2MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading mistral-common (6.3MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading grpcio (7.0MiB)
+Downloading cuda-core (6.3MiB)
+Downloading numpy (15.8MiB)
+Downloading nvidia-mathdx (21.9MiB)
+Downloading nccl-extensions (21.5MiB)
+Downloading pulp (15.6MiB)
+Downloading nvidia-cutlass-dsl-libs-cu12 (87.5MiB)
+Downloading scikit-image (14.3MiB)
+Downloading sgl-deep-ep (14.7MiB)
+Downloading av (39.3MiB)
+error: Failed to download `imageio-ffmpeg==0.5.1`
+  cause: Request failed after 4 retries in 125.8s
+  cause: Failed to fetch: https://pypi.tuna.tsinghua.edu.cn/packages/fe/44/c9e18a73dfd939b5b0ec843870ac72f1f6c17e31a03149b687a85465bff7/imageio_ffmpeg-0.5.1-py3-none-manylinux2010_x86_64.whl
+  cause: error sending request for url (https://pypi.tuna.tsinghua.edu.cn/packages/fe/44/c9e18a73dfd939b5b0ec843870ac72f1f6c17e31a03149b687a85465bff7/imageio_ffmpeg-0.5.1-py3-none-manylinux2010_x86_64.whl)
+  cause: operation timed out
+
+hint: `imageio-ffmpeg` (v0.5.1) was included because `sglang[diffusion]` (v0.5.22) depends on `imageio-ffmpeg`
+Using Python 3.12.16 environment at: runtime-venv
+Resolved 234 packages in 19.41s
+Downloading torch (528.9MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading sglang-kernel (354.2MiB)
+Downloading sglang-kernel (354.2MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading torch (528.9MiB)
+Downloading sglang-kernel (354.2MiB)
+Downloading torch (528.9MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+
+Switching failed repeated downloads to Tencent mirror
+Using Python 3.12.16 environment at: runtime-venv
+Resolved 234 packages in 9m 08s
+Downloading nvidia-cutlass-dsl-libs-base (2.9MiB)
+Downloading cython (3.3MiB)
+Downloading pydantic-core (2.1MiB)
+Downloading xgrammar (1.2MiB)
+Downloading diffusers (4.8MiB)
+Downloading pandas (11.5MiB)
+Downloading nvidia-cuda-cccl (3.7MiB)
+Downloading transformers (12.0MiB)
+ Downloaded pydantic-core
+ Downloaded xgrammar
+Downloading numba (3.6MiB)
+Downloading transformers (12.0MiB)
+Downloading pandas (11.5MiB)
+Downloading diffusers (4.8MiB)
+Downloading numba (3.6MiB)
+Downloading nvidia-cuda-cccl (3.7MiB)
+Downloading cython (3.3MiB)
+Downloading nvidia-cutlass-dsl-libs-base (2.9MiB)
+Downloading zstandard (5.3MiB)
+ Downloaded nvidia-cutlass-dsl-libs-base
+Downloading nvidia-cufft (204.2MiB)
+ Downloaded cython
+ Downloaded nvidia-cuda-cccl
+Downloading torchaudio (1.7MiB)
+ Downloaded numba
+Downloading networkx (2.0MiB)
+ Downloaded diffusers
+Downloading cuda-bindings (6.8MiB)
+ Downloaded torchaudio
+Downloading nvidia-curand (56.8MiB)
+Downloading llguidance (2.9MiB)
+ Downloaded networkx
+Downloading numpy (15.8MiB)
+ Downloaded zstandard
+Downloading nvidia-cuda-cupti (10.2MiB)
+ Downloaded llguidance
+Downloading tokenizers (3.2MiB)
+ Downloaded pandas
+ Downloaded cuda-bindings
+Downloading nvidia-mathdx (21.9MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+ Downloaded transformers
+Downloading scikit-image (14.3MiB)
+ Downloaded tokenizers
+Downloading sentencepiece (1.3MiB)
+ Downloaded sentencepiece
+ Downloaded nvidia-cuda-cupti
+Downloading vsa (3.0MiB)
+Downloading timm (2.4MiB)
+ Downloaded timm
+Downloading torch (528.9MiB)
+ Downloaded vsa
+Downloading grpcio (7.0MiB)
+ Downloaded numpy
+Downloading nvidia-cublas (403.5MiB)
+ Downloaded scikit-image
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+ Downloaded grpcio
+Downloading pyarrow (52.5MiB)
+ Downloaded nvidia-mathdx
+Downloading scipy (33.7MiB)
+ Downloaded nvidia-curand
+Downloading nccl-extensions (21.5MiB)
+ Downloaded nccl-extensions
+Downloading opencv-python-headless (47.5MiB)
+ Downloaded scipy
+Downloading pygments (1.2MiB)
+ Downloaded pygments
+Downloading nvidia-nvjitlink (40.5MiB)
+ Downloaded nvidia-nvshmem-cu13
+Downloading nvidia-nccl-cu13 (206.0MiB)
+ Downloaded pyarrow
+Downloading openai-harmony (2.9MiB)
+ Downloaded openai-harmony
+   Building cuda-tile==1.6.0rc5
+Downloading z3-solver (27.9MiB)
+ Downloaded opencv-python-headless
+Downloading nvidia-cudnn-frontend (11.1MiB)
+ Downloaded nvidia-nvjitlink
+Downloading flashinfer-python (64.1MiB)
+ Downloaded nvidia-cudnn-frontend
+Downloading pillow (6.3MiB)
+ Downloaded z3-solver
+Downloading triton (236.5MiB)
+ Downloaded pillow
+Downloading apache-tvm-ffi (2.6MiB)
+ Downloaded apache-tvm-ffi
+Downloading py-spy (2.8MiB)
+ Downloaded py-spy
+Downloading tokenspeed-triton (90.5MiB)
+ Downloaded flashinfer-python
+Downloading cuda-core (6.3MiB)
+ Downloaded cuda-core
+Downloading nvidia-cutlass-dsl-libs-cu12 (87.5MiB)
+ Downloaded nvidia-nccl-cu13
+Downloading sglang (32.8MiB)
+ Downloaded tokenspeed-triton
+ Downloaded nvidia-cutlass-dsl-libs-cu12
+Downloading sympy (6.0MiB)
+Downloading nvidia-modelopt (2.5MiB)
+ Downloaded sympy
+Downloading st-attn (3.4MiB)
+ Downloaded nvidia-modelopt
+ Downloaded nvidia-cufft
+Downloading nvidia-cusolver (191.6MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+ Downloaded st-attn
+Downloading nvidia-cuda-nvcc (45.5MiB)
+ Downloaded sglang
+Downloading pycountry (7.7MiB)
+Downloading triton (236.5MiB)
+Downloading torch (528.9MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading torch (528.9MiB)
+Downloading pycountry (7.7MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading pycountry (7.7MiB)
+Downloading torch (528.9MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading torch (528.9MiB)
+Downloading pycountry (7.7MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading triton (236.5MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading pycountry (7.7MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading torch (528.9MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading pycountry (7.7MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading torch (528.9MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading torch (528.9MiB)
+Downloading pycountry (7.7MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+ Downloaded pycountry
+Downloading nvidia-nvvm (69.2MiB)
+ Downloaded nvidia-nvvm
+Downloading torch-memory-saver (2.5MiB)
+ Downloaded torch-memory-saver
+Downloading lxml (5.0MiB)
+ Downloaded lxml
+Downloading uvloop (4.3MiB)
+ Downloaded uvloop
+Downloading hf-xet (4.1MiB)
+Downloading hf-xet (4.1MiB)
+ Downloaded hf-xet
+Downloading llvmlite (53.7MiB)
+Downloading llvmlite (53.7MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading triton (236.5MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+Downloading torch (528.9MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading mistral-common (6.3MiB)
+Downloading jedi (4.7MiB)
+Downloading cryptography (4.5MiB)
+Downloading llvmlite (53.7MiB)
+Downloading imageio-ffmpeg (25.7MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading nvidia-cuda-nvcc (45.5MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading nvidia-cutlass-dsl-libs-cu13 (87.7MiB)
+Downloading mistral-common (6.3MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading jedi (4.7MiB)
+Downloading cryptography (4.5MiB)
+Downloading llvmlite (53.7MiB)
+Downloading aiohttp (1.8MiB)
+Downloading nvidia-cutlass-dsl-libs-cu13 (87.7MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading aiohttp (1.8MiB)
+Downloading jedi (4.7MiB)
+Downloading cryptography (4.5MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading mistral-common (6.3MiB)
+Downloading llvmlite (53.7MiB)
+Downloading aiohttp (1.8MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading nvidia-cutlass-dsl-libs-cu13 (87.7MiB)
+Downloading jedi (4.7MiB)
+Downloading cryptography (4.5MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading mistral-common (6.3MiB)
+Downloading llvmlite (53.7MiB)
+ Downloaded aiohttp
+Downloading nvshmem4py-cu13 (4.8MiB)
+ Downloaded nvidia-cuda-runtime
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+ Downloaded cryptography
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+ Downloaded jedi
+Downloading nvidia-cutlass-dsl-libs-core (1.6MiB)
+ Downloaded nvshmem4py-cu13
+ Downloaded mistral-common
+Downloading anthropic (2.2MiB)
+Downloading nvidia-cufile (1.2MiB)
+ Downloaded nvidia-cutlass-dsl-libs-core
+Downloading nccl4py (3.5MiB)
+ Downloaded anthropic
+ Downloaded nvidia-cufile
+Downloading modelscope (5.8MiB)
+Downloading sglang-kernel (354.2MiB)
+ Downloaded nccl4py
+Downloading sgl-deep-gemm (5.2MiB)
+ Downloaded modelscope
+Downloading tiktoken (1.1MiB)
+ Downloaded tiktoken
+Downloading pulp (15.6MiB)
+ Downloaded sgl-deep-gemm
+Downloading av (39.3MiB)
+ Downloaded pulp
+Downloading soundfile (1.3MiB)
+ Downloaded soundfile
+Downloading tilelang (48.2MiB)
+ Downloaded tilelang
+Downloading sgl-deep-ep (14.7MiB)
+ Downloaded sgl-deep-ep
+Downloading pycryptodomex (2.2MiB)
+ Downloaded pycryptodomex
+Downloading torchvision (7.2MiB)
+ Downloaded torchvision
+Downloading kernels-data (1.2MiB)
+ Downloaded kernels-data
+Downloading torchcodec (9.5MiB)
+ Downloaded torchcodec
+Downloading torch (528.9MiB)
+ Downloaded llvmlite
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+ Downloaded av
+Downloading nvidia-cublas (403.5MiB)
+ Downloaded nvidia-cutlass-dsl-libs-cu13
+Downloading triton (236.5MiB)
+ Downloaded nvidia-cuda-nvrtc
+Downloading nvidia-cuda-nvcc (45.5MiB)
+ Downloaded nvidia-cusparse
+Downloading imageio-ffmpeg (25.7MiB)
+ Downloaded imageio-ffmpeg
+Downloading nvidia-cusolver (191.6MiB)
+ Downloaded nvidia-cusparselt-cu13
+error: Failed to build `cuda-tile==1.6.0rc5`
+  cause: The build backend returned an error
+  cause: Call to `wheel_stub.buildapi.build_wheel` failed (exit status: 1)
+
+         [stderr]
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/wheel.py", line 249, in download_wheel
+             return download_manual(wheel_directory, distribution, version, config)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/wheel.py", line 174, in download_manual
+             index_response = urlopen_with_retry(project_url)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/wheel.py", line 92, in urlopen_with_retry
+             return urlopen(url, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 215, in urlopen
+             return opener.open(url, data, timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 515, in open
+             response = self._open(req, data)
+                        ^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 532, in _open
+             result = self._call_chain(self.handle_open, protocol, protocol +
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 492, in _call_chain
+             result = func(*args)
+                      ^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 1405, in https_open
+             return self.do_open(http.client.HTTPSConnection, req,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 1360, in do_open
+             raise URLError(err)
+         Traceback (most recent call last):
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 1357, in do_open
+             h.request(req.get_method(), req.selector, req.data, headers,
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/http/client.py", line 1386, in request
+             self._send_request(method, url, body, headers, encode_chunked)
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/http/client.py", line 1432, in _send_request
+             self.endheaders(body, encode_chunked=encode_chunked)
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/http/client.py", line 1381, in endheaders
+             self._send_output(message_body, encode_chunked=encode_chunked)
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/http/client.py", line 1141, in _send_output
+             self.send(msg)
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/http/client.py", line 1085, in send
+             self.connect()
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/http/client.py", line 1527, in connect
+             self.sock = self._context.wrap_socket(self.sock,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/ssl.py", line 457, in wrap_socket
+             return self.sslsocket_class._create(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/ssl.py", line 1066, in _create
+             self.do_handshake()
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/ssl.py", line 1344, in do_handshake
+             self._sslobj.do_handshake()
+         ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1011)
+
+         During handling of the above exception, another exception occurred:
+
+         Traceback (most recent call last):
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/wheel.py", line 249, in download_wheel
+             return download_manual(wheel_directory, distribution, version, config)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/wheel.py", line 174, in download_manual
+             index_response = urlopen_with_retry(project_url)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/wheel.py", line 92, in urlopen_with_retry
+             return urlopen(url, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 215, in urlopen
+             return opener.open(url, data, timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 515, in open
+             response = self._open(req, data)
+                        ^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 532, in _open
+             result = self._call_chain(self.handle_open, protocol, protocol +
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 492, in _call_chain
+             result = func(*args)
+                      ^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 1405, in https_open
+             return self.do_open(http.client.HTTPSConnection, req,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/urllib/request.py", line 1360, in do_open
+             raise URLError(err)
+         urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1011)>
+
+         During handling of the above exception, another exception occurred:
+
+         Traceback (most recent call last):
+           File "<string>", line 11, in <module>
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/buildapi.py", line 29, in build_wheel
+             return download_wheel(pathlib.Path(wheel_directory), config_settings)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/wheel.py", line 251, in download_wheel
+             report_install_failure(distribution, version, config, exception_context)
+           File "/data/users/example/h3-turbo4/cache/uv/builds-v0/.tmpuc4hau/lib/python3.12/site-packages/wheel_stub/error.py", line 67, in report_install_failure
+             raise InstallFailedError(
+         wheel_stub.error.InstallFailedError: 
+         *******************************************************************************
+
+         The installation of cuda-tile for version 1.6.0rc5 failed.
+
+         This is a special placeholder package which downloads a real wheel package
+         from https://pypi.nvidia.com/. If https://pypi.nvidia.com/ is not reachable, we
+         cannot download the real wheel file to install.
+
+         You might try installing this package via
+         ```
+         $ pip install --extra-index-url https://pypi.nvidia.com/ cuda-tile
+         ```
+
+         Here is some debug information about your platform to include in any bug
+         report:
+
+         Python Version: CPython 3.12.16
+         Operating System: Linux 5.10.134-16.3.al8.x86_64
+         CPU Architecture: x86_64
+         Driver Version: 580.105
+         CUDA Version: 13.0
+
+         *******************************************************************************
+
+hint: `cuda-tile` (v1.6.0rc5) was included because `sglang` (v0.5.22) depends on `cuda-tile`
+
+hint: Build failures usually indicate a problem with the package or the build environment
+
+Retry with NVIDIA official extra index for cuda-tile
+Using Python 3.12.16 environment at: runtime-venv
+Resolved 234 packages in 34.44s
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-cutlass-dsl-libs-core (1.6MiB)
+Downloading nvshmem4py-cu13 (4.8MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading nvidia-cutlass-dsl-libs-cu13 (87.7MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading torch (528.9MiB)
+ Downloaded nvidia-cutlass-dsl-libs-core
+Downloading nvidia-nvvm (69.2MiB)
+ Downloaded nvidia-cuda-runtime
+Downloading nvidia-cuda-nvcc (45.5MiB)
+ Downloaded nvshmem4py-cu13
+Downloading nvidia-cusolver (191.6MiB)
+ Downloaded nvidia-nvvm
+Downloading nvidia-modelopt (2.5MiB)
+ Downloaded nvidia-modelopt
+Downloading nvidia-cutlass-dsl-libs-base (2.9MiB)
+ Downloaded nvidia-cutlass-dsl-libs-base
+Downloading nvidia-cuda-cccl (3.7MiB)
+ Downloaded nvidia-cuda-cccl
+Downloading nvidia-cufft (204.2MiB)
+ Downloaded nvidia-cuda-nvrtc
+Downloading triton (236.5MiB)
+ Downloaded nvidia-cuda-nvcc
+Downloading nvidia-curand (56.8MiB)
+ Downloaded nvidia-curand
+Downloading nvidia-cuda-cupti (10.2MiB)
+ Downloaded nvidia-cuda-cupti
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+ Downloaded nvidia-nvshmem-cu13
+Downloading nvidia-mathdx (21.9MiB)
+ Downloaded nvidia-mathdx
+Downloading nvidia-cublas (403.5MiB)
+ Downloaded nvidia-cutlass-dsl-libs-cu13
+Downloading nvidia-cudnn-cu13 (527.5MiB)
+ Downloaded triton
+Downloading sglang-kernel (354.2MiB)
+ Downloaded nvidia-cusolver
+Downloading nccl-extensions (21.5MiB)
+ Downloaded nccl-extensions
+Downloading nvidia-nvjitlink (40.5MiB)
+ Downloaded torch
+Downloading nvidia-nccl-cu13 (206.0MiB)
+ Downloaded nvidia-cusparse
+Downloading nvidia-cudnn-frontend (11.1MiB)
+ Downloaded nvidia-cublas
+Downloading nvidia-cutlass-dsl-libs-cu12 (87.5MiB)
+ Downloaded nvidia-cudnn-frontend
+ Downloaded nvidia-nvjitlink
+Downloading nccl4py (3.5MiB)
+Downloading nvidia-cufile (1.2MiB)
+ Downloaded nvidia-cufile
+ Downloaded nccl4py
+ Downloaded nvidia-cusparselt-cu13
+ Downloaded nvidia-cufft
+ Downloaded nvidia-cutlass-dsl-libs-cu12
+ Downloaded nvidia-cudnn-cu13
+ Downloaded nvidia-nccl-cu13
+ Downloaded sglang-kernel
+Prepared 35 packages in 16m 04s
+Installed 234 packages in 1.24s
+ + addict==2.4.0
+ + aiohappyeyeballs==2.7.1
+ + aiohttp==3.14.5
+ + aiosignal==1.4.0
+ + airportsdata==20261103
+ + annotated-doc==0.0.5
+ + annotated-types==0.8.0
+ + anthropic==2.4.0
+ + anyio==4.16.0
+ + apache-tvm-ffi==0.1.11
+ + asttokens==3.0.2
+ + attrs==26.1.0
+ + av==16.1.0
+ + blobfile==3.0.0
+ + build==1.6.1
+ + cache-dit==1.5.1
+ + certifi==2026.10.23
+ + cffi==2.1.1
+ + charset-normalizer==3.5.2
+ + click==8.5.0
+ + cloudpickle==3.1.2
+ + compressed-tensors==0.18.0
+ + cryptography==50.0.2
+ + cuda-bindings==13.4.4
+ + cuda-core==1.2.2
+ + cuda-pathfinder==1.8.5
+ + cuda-python==13.4.4
+ + cuda-tile==1.6.0rc5
+ + cuda-toolkit==13.0.3.0
+ + cython==3.3.1
+ + datasets==5.1.0
+ + decorator==5.3.1
+ + diffusers==0.37.0
+ + dill==0.4.1
+ + diskcache==5.6.3
+ + distro==1.9.0
+ + docstring-parser==0.18.0
+ + easydict==1.13
+ + einops==0.8.2
+ + executing==2.3.0
+ + fastapi==0.162.0
+ + filelock==4.2.7
+ + flash-attn-4==4.0.0b37
+ + flashinfer-python==0.7.1
+ + frozenlist==1.8.0
+ + fsspec==2026.7.0
+ + gguf==0.19.0
+ + grpcio==1.85.1
+ + grpcio-health-checking==1.85.1
+ + grpcio-reflection==1.85.1
+ + h11==0.16.0
+ + hf-xet==1.8.0
+ + httpcore==1.0.9
+ + httpcore2==2.16.0
+ + httpx==0.28.1
+ + httpx2==2.16.0
+ + huggingface-hub==1.33.0
+ + humanize==4.16.0
+ + humming-kernels==0.1.12
+ + idna==3.20
+ + imageio==2.36.0
+ + imageio-ffmpeg==0.5.1
+ + importlib-metadata==10.1.0
+ + interegular==0.3.3
+ + ipython==9.18.1
+ + ipython-pygments-lexers==1.1.1
+ + jedi==0.20.1
+ + jinja2==3.1.6
+ + jiter==0.18.0
+ + jsonschema==4.26.0
+ + jsonschema-specifications==2025.9.1
+ + kernels==0.14.1
+ + kernels-data==0.16.2
+ + lark==1.3.1
+ + lazy-loader==0.6
+ + llguidance==1.9.1
+ + llvmlite==0.47.0
+ + loguru==0.7.3
+ + lxml==6.1.3
+ + markdown-it-py==4.2.0
+ + markupsafe==3.0.4
+ + matplotlib-inline==0.2.2
+ + mdurl==0.1.2
+ + mistral-common==1.13.1
+ + ml-dtypes==0.6.0
+ + modelscope==1.40.2
+ + modelscope-hub==0.6.1
+ + moviepy==2.2.1
+ + mpmath==1.3.0
+ + msgpack==1.2.4
+ + msgspec==0.22.0
+ + multidict==7.2.1
+ + multiprocess==0.70.19
+ + nccl-extensions==0.1.0
+ + nccl4py==0.6.0
+ + nest-asyncio==1.6.0
+ + networkx==3.7
+ + ninja==1.13.2
+ + numba==0.65.1
+ + numpy==2.3.5
+ + nvidia-cublas==13.1.1.3
+ + nvidia-cuda-cccl==13.3.4.3.1
+ + nvidia-cuda-crt==13.4.92
+ + nvidia-cuda-cupti==13.0.85
+ + nvidia-cuda-nvcc==13.4.92
+ + nvidia-cuda-nvrtc==13.0.88
+ + nvidia-cuda-runtime==13.0.96
+ + nvidia-cudnn-cu13==9.24.0.43
+ + nvidia-cudnn-frontend==1.32.1
+ + nvidia-cufft==12.0.0.61
+ + nvidia-cufile==1.15.1.6
+ + nvidia-curand==10.4.0.35
+ + nvidia-cusolver==12.0.4.66
+ + nvidia-cusparse==12.6.3.3
+ + nvidia-cusparselt-cu13==0.8.1
+ + nvidia-cutlass-dsl==4.8.0
+ + nvidia-cutlass-dsl-libs-base==4.8.0
+ + nvidia-cutlass-dsl-libs-core==4.8.0
+ + nvidia-cutlass-dsl-libs-cu12==4.8.0
+ + nvidia-cutlass-dsl-libs-cu13==4.8.0
+ + nvidia-mathdx==25.6.0
+ + nvidia-ml-py==13.615.71
+ + nvidia-modelopt==0.48.0
+ + nvidia-nccl-cu13==2.30.7
+ + nvidia-nvjitlink==13.4.92
+ + nvidia-nvshmem-cu13==3.4.5
+ + nvidia-nvtx==13.0.85
+ + nvidia-nvvm==13.4.92
+ + nvshmem4py-cu13==0.4.1
+ + omegaconf==2.4.0
+ + openai==2.6.1
+ + openai-harmony==0.0.4
+ + opencv-python-headless==4.10.0.84
+ + opentelemetry-api==1.45.2
+ + orjson==3.13.0
+ + outlines==0.1.11
+ + outlines-core==0.1.26
+ + packaging==26.3
+ + pandas==3.1.0
+ + parso==0.8.7
+ + partial-json-parser==0.2.1.1.post7
+ + pexpect==4.9.0
+ + pillow==11.3.0
+ + proglog==0.1.12
+ + prometheus-client==0.26.0
+ + prompt-toolkit==3.0.53
+ + propcache==0.5.4
+ + protobuf==7.36.2
+ + psutil==7.2.2
+ + ptyprocess==0.7.0
+ + pulp==3.3.2
+ + pure-eval==0.2.4
+ + py-spy==0.4.3
+ + pyarrow==26.0.1
+ + pybase64==1.5.1
+ + pycountry==26.2.16
+ + pycparser==3.12
+ + pycryptodomex==3.24.1
+ + pydantic==2.14.2
+ + pydantic-core==2.50.2
+ + pydantic-extra-types==2.11.1
+ + pygments==2.21.0
+ + pyproject-hooks==1.3.3
+ + python-dateutil==4.0.0
+ + python-dotenv==1.2.4
+ + python-multipart==0.0.33
+ + pyyaml==6.0.1
+ + pyzmq==27.3.0
+ + quack-kernels==0.6.5
+ + referencing==0.37.0
+ + regex==2026.9.29
+ + remote-pdb==2.1.0
+ + requests==2.34.2
+ + rich==15.0.0
+ + rpds-py==2026.9.1
+ + runai-model-streamer==0.17.1
+ + safetensors==0.8.0
+ + scikit-image==0.25.2
+ + scipy==1.18.1
+ + sentencepiece==0.2.1
+ + setproctitle==1.3.8
+ + setuptools==84.2.1
+ + sgl-deep-ep==0.1.2.post1
+ + sgl-deep-gemm==0.2.2
+ + sglang==0.5.22
+ + sglang-kernel==0.4.9
+ + shellingham==1.5.4
+ + smg-grpc-proto==0.4.28
+ + smg-grpc-servicer==0.15.0
+ + sniffio==1.3.1
+ + soundfile==0.13.1
+ + st-attn==0.0.7
+ + stack-data==0.6.3
+ + starlette==1.10.0
+ + sympy==1.14.0
+ + tabulate==0.10.0
+ + tifffile==2026.10.15
+ + tiktoken==0.14.0
+ + tilelang==0.1.12
+ + timm==1.0.16
+ + tokenizers==0.23.2
+ + tokenspeed-mla==0.1.8
+ + tokenspeed-triton==3.9.10.post20261028
+ + tomlkit==0.15.2
+ + torch==2.14.1
+ + torch-c-dlpack-ext==0.1.5
+ + torch-memory-saver==0.0.10
+ + torchaudio==2.11.0
+ + torchcodec==0.17.0
+ + torchvision==0.29.2
+ + tqdm==4.70.1
+ + traitlets==5.16.1
+ + transformers==5.19.0
+ + trimesh==5.2.0
+ + triton==3.8.0
+ + truststore==0.10.5
+ + typer==0.27.3
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.4
+ + tzdata==2026.6
+ + urllib3==2.8.0
+ + uvicorn==0.54.0
+ + uvloop==0.23.0
+ + vsa==0.0.4
+ + watchfiles==1.3.0
+ + wcwidth==0.9.4
+ + websockets==17.4
+ + xatlas==0.0.11
+ + xgrammar==0.2.7
+ + xxhash==4.0.2
+ + yarl==1.25.1
+ + z3-solver==4.15.4.0
+ + zipp==4.1.2
+ + zstandard==0.25.0
